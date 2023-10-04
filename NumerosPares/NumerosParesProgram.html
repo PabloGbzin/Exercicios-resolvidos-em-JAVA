@@ -1,0 +1,43 @@
+<!--
+package aplication;
+import java.util.Scanner;
+import java.util.Locale;
+import entities.ProblemaNumerosParesObj;
+
+public class ProblemaNumerosParesProgram {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		int count = 0;
+
+		System.out.print("Quantos numeros voce vai digitar? ");
+		int qtd = sc.nextInt();
+
+		ProblemaNumerosParesObj[] numeros = new ProblemaNumerosParesObj[qtd];
+
+		for (int i = 0; i < numeros.length; i++) {
+
+			System.out.print("Digite um número: ");
+			int num = sc.nextInt();
+			numeros[i] = new ProblemaNumerosParesObj(num);
+		}
+		
+		System.out.println("Numeros pares: ");
+		for (int i = 0; i < numeros.length; i++) {
+
+			if (numeros[i].getNumeros() % 2 == 0) {
+				count += 1;
+				System.out.print(numeros[i].getNumeros() + " ");
+			}
+		}
+		
+		System.out.println();
+		System.out.println("Quantidade de pares = " + count);
+
+		sc.close();
+
+	}
+}
+-->
