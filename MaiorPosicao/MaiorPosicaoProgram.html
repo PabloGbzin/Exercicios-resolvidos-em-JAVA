@@ -1,0 +1,40 @@
+<!--
+package aplication;
+import java.util.Scanner;
+import java.util.Locale;
+import entities.ProblemaMaiorPosicaoObj;
+
+public class ProblemaMaiorPosicao {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		double maior = 0;
+		int posicaoMaior = 0;
+
+		System.out.print("Quantos numeros voce vai digitar? ");
+		int qtd = sc.nextInt();
+
+		ProblemaMaiorPosicaoObj[] num = new ProblemaMaiorPosicaoObj[qtd];
+
+		for (int i = 0; i < qtd; i++) {
+			System.out.print("Digite um numero: ");
+			double numD = sc.nextDouble();
+			num[i] = new ProblemaMaiorPosicaoObj(numD);
+		}
+		for (int i = 0; i < qtd; i++) {
+
+			if (num[i].getNum() > maior) {
+				maior = num[i].getNum();
+				posicaoMaior = i;
+			}
+		}
+		System.out.println("Maior valor = " + maior);
+		System.out.println("Posicao do maior valor = " + posicaoMaior);
+
+		sc.close();
+	}
+
+}
+-->
