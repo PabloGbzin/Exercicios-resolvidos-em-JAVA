@@ -1,0 +1,45 @@
+<!--
+package aplication;
+import java.util.Scanner;
+import java.util.Locale;
+import entities.MaisVelhoObj;
+public class MaisVelhoProgram {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		Scanner in = new Scanner(System.in);
+		
+		System.out.println("Quantas pessoas voce vai digitar? ");
+		int qtd = sc.nextInt();
+		
+		MaisVelhoObj[] idades = new MaisVelhoObj[qtd];
+		MaisVelhoObj[] nomes = new MaisVelhoObj[qtd];
+		
+		for(int i = 0; i < nomes.length; i++) {
+			System.out.printf("Digite os dados da %d%s%n", i + 1, "a pessoa:");
+			System.out.println("Nome: ");
+			String nomeP = in.nextLine();
+			System.out.println("Idade: ");
+			int idadeP = sc.nextInt();
+			
+			nomes[i] = new MaisVelhoObj(nomeP);
+			idades[i] = new MaisVelhoObj(idadeP);
+		}
+		int maiorIdade = 0, posicao = 0 ;
+		
+		for(int i = 0; i < nomes.length; i++) {
+			
+			if(idades[i].getIdade() > maiorIdade) {
+				maiorIdade = idades[i].getIdade();
+				posicao = i;
+			}
+		}
+		System.out.printf("pessoa mais velha:" + nomes[posicao].getNome());
+	
+		sc.close();
+		in.close();
+	}
+
+}
+-->
