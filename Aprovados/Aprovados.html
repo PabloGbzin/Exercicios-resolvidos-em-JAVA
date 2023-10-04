@@ -1,0 +1,47 @@
+<!--
+package aplication;
+import java.util.Scanner;
+import java.util.Locale;
+import entities.AprovadosObj;
+public class AprovadosProgram {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		Scanner in = new Scanner(System.in);
+		System.out.print("Quantos alunos serão digitados? ");
+		int qtd = sc.nextInt();
+		
+		
+		
+		AprovadosObj[] nomes = new AprovadosObj[qtd];
+		AprovadosObj[] notas1 = new AprovadosObj[qtd];
+		AprovadosObj[] notas2 = new AprovadosObj[qtd];
+		
+		for(int i = 0; i < nomes.length; i++) {
+			
+			System.out.printf("Digite nome, primeira e segunda nota do %d%s", i + 1, "Aluno" );
+			String nome = in.nextLine();
+			float nota1 = sc.nextFloat();
+			float nota2 = sc.nextFloat();
+			
+			nomes[i] = new AprovadosObj(nome);
+			notas1[i] = new AprovadosObj(nota1);
+			notas2[i] = new AprovadosObj(nota2);
+		}
+		
+		int posicao = 0;
+		
+		for(int i = 0; i < nomes.length; i++) {
+			
+			if(notas1[i].getNotas() * 1 + notas2[i].getNotas() / 2 >= 6) {
+				posicao = i;
+				System.out.println(nomes[posicao].getNomes());
+			}
+		}
+	sc.close();
+	in.close();
+	}
+
+}
+-->
