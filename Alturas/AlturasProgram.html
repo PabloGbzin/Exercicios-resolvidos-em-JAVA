@@ -1,66 +1,56 @@
-<!--
-package aplication;
-import java.util.Scanner;
-import java.util.Locale;
-import entities.ProblemaAlturasObj;
 
-public class ProblemaAlturasProgram {
+package application;
+import java.util.Locale;
+import java.util.Scanner;
+import entities.Height;
+public class Program {
 
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		Scanner in = new Scanner(System.in);
+		
+		System.out.print("How many persons will be entered? ");
+		int num = sc.nextInt();
 
-		double soma = 0;
-
-		double count = 0;
-
-		System.out.print("Quantas pessoas serao digitadas ?");
-		int qtd = sc.nextInt();
-
-		ProblemaAlturasObj[] nome = new ProblemaAlturasObj[qtd];
-		ProblemaAlturasObj[] idade = new ProblemaAlturasObj[qtd];
-		ProblemaAlturasObj[] altura = new ProblemaAlturasObj[qtd];
-
-		for (int i = 0; i < nome.length; i++) {
-			System.out.printf("Dados da %d%s%n", i + 1, "a pessoa");
-			System.out.print("Nome: ");
-			String nomeP = in.nextLine();
+		Height[] persons = new Height[num];
+		
+		for(int i = 0; i < persons.length; i++) {
+			System.out.print("Name: ");
+			String name = in.nextLine();
 			System.out.print("Idade: ");
-			int idadeP = sc.nextInt();
-			System.out.print("Altura: ");
-			double alturaP = sc.nextDouble();
-
-			nome[i] = new ProblemaAlturasObj(nomeP);
-			idade[i] = new ProblemaAlturasObj(idadeP);
-			altura[i] = new ProblemaAlturasObj(alturaP);
+			Integer age = sc.nextInt();
+			System.out.print("Height: ");
+			Double height = sc.nextDouble();
+			
+			persons[i] = new Height(name, age, height);
 		}
-
-		double mediaIdade = 0;
-
-		for (int i = 0; i < nome.length; i++) {
-			soma += altura[i].getAltura();
-
-			if (idade[i].getIdade() < 16) {
-				count += 1;
+		
+		Double sum = 0.0, count = 0.0;
+		for(int i = 0; i < persons.length; i++) {
+			sum += persons[i].getheight();
+			count ++;
+		}
+		Double average = sum / count;
+		
+		double countAge = 0.0;
+		for(int i = 0; i < persons.length; i++) {
+			if(persons[i].getage() < 16) {
+				countAge ++;
 			}
 		}
-
-		double mediaAltura = soma / qtd;
-		mediaIdade = count / qtd * 100;
-
-		System.out.printf("Altura média: %.2f%n", mediaAltura);
-		System.out.println("Pessoas com menos de 16 anos: " + mediaIdade + "%");
-		for (int i = 0; i < nome.length; i++) {
-
-			if (idade[i].getIdade() < 16) {
-				System.out.println(nome[i].getNome());
+		double personsUnder16 = (countAge / persons.length) * 100;
+		System.out.println();
+		System.out.printf("Average height: %.2f%n", average);
+		System.out.println("Persons under 16: " + personsUnder16 + "%");
+		
+		for(int i = 0; i < persons.length; i++) {
+			if(persons[i].getage() < 16) {
+				System.out.println(persons[i].getname());
 			}
-
-			sc.close();
-			in.close();
 		}
+		sc.close();
+		in.close();
 	}
-}
 
--->
+}
